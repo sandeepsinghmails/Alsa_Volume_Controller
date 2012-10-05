@@ -4,35 +4,34 @@
  * 
  * Copyright 2012 Sandeep Singh (sandeepsinghmails@gmail.com)
  *
- * This file is part of  Tic-Tac-Toe--Human-Vs-Computer.
- * Tic-Tac-Toe--Human-Vs-Computer is free software: you can redistribute it
+ * This file is part of Alsa Volume Controller.
+ * Alsa Volume Controller is free software: you can redistribute it
  * and/or modify it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Tic-Tac-Toe--Human-Vs-Computer is distributed in the hope that it will be useful,
+ * Alsa Volume Controller is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with Tic-Tac-Toe--Human-Vs-Computer. If not, see <http://www.gnu.org/licenses/>.
+ * along with Alsa Volume Controller. If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include <stdio.h>
-#include <stdlib.h>  /* For system() Function */
-#include <gtk/gtk.h> /* GTK Library			  */
+#include <stdlib.h>  
+#include <gtk/gtk.h> 
 
-#define MAXSIZE 500  /* Buffer Size 		  */
+#define MAXSIZE 500  
 
-/* Buffer to Store the String to be print in the Window */
 char Buffer[MAXSIZE];
 
 void GetSystemVolume(void);
 
-void increase(GtkWidget *widget, gpointer window_label)
+void IncreaseVolume(GtkWidget *widget, gpointer window_label)
 {
-	/* Now, actually increase the Cound Level by 1 */
+	/* Now, actually increase the Sound Level by 1 */
 	system("amixer --quiet set Master 1+");
 
 	/* Get System Volume */
@@ -42,9 +41,9 @@ void increase(GtkWidget *widget, gpointer window_label)
   	gtk_label_set_text(GTK_LABEL(window_label), Buffer);
 }
 
-void decrease(GtkWidget *widget, gpointer window_label)
+void DecreaseVolume(GtkWidget *widget, gpointer window_label)
 {
-	/* Now, actually decrease the Cound Level by 1 */
+	/* Now, actually decrease the Sound Level by 1 */
 	system("amixer --quiet set Master 1-");
 
 	/* Get System Volume */
@@ -69,7 +68,7 @@ int main(int argc, char** argv)
   	gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
 	/* Set Title for GTK Window */
-  	gtk_window_set_title(GTK_WINDOW(window), "The ALSA Sound Controller");
+  	gtk_window_set_title(GTK_WINDOW(window), "ALSA Volume Controller");
 
 	/* Set Default Size of the GTK Window */
   	gtk_window_set_default_size(GTK_WINDOW(window), 460, 150);
@@ -95,10 +94,10 @@ int main(int argc, char** argv)
     G_CALLBACK (gtk_main_quit), NULL);
 
   	g_signal_connect(increase_vol, "clicked", 
-    G_CALLBACK(increase), window_label);
+    G_CALLBACK(IncreaseVolume), window_label);
 
   	g_signal_connect(decrease_vol, "clicked", 
-    G_CALLBACK(decrease), window_label);
+    G_CALLBACK(DecreaseVolume), window_label);
 
   	gtk_main();
 
