@@ -1,8 +1,6 @@
-=======================
-
+-----------------------
 Alsa Volume Controller:
-
-=======================
+-----------------------
 
 This is a GUI frontend to control ALSA Volume.
 
