@@ -1,18 +1,17 @@
-
-Alsa Volume Controller:
+**Alsa Volume Controller**
 
 
 This is a GUI frontend to control ALSA Volume.
 
 
-How to Compile:
+*How to Compile:*
 
 
 $ gcc -g -o alsa_controller Vol_Controller.c `pkg-config --libs --cflags gtk+-2.0`
 
 
 
-How To Use this Application:
+*How To Use this Application:*
 
 
 It is very simple to use this application. 
