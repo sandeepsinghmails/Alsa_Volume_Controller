@@ -19,7 +19,7 @@
  * along with Volume Controller. If not, see <http://www.gnu.org/licenses/>.
  *
  * To Compile:
- * $ gcc -g -o alsa_controller Vol_Controller.c `pkg-config --libs --cflags gtk+-2.0`
+ * $ gcc -o alsa_controller Vol_Controller.c `pkg-config --libs --cflags gtk+-2.0`
  */
 
 #include <stdio.h>
