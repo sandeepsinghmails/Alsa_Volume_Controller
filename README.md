@@ -24,6 +24,6 @@ To maximize the System Volume, click on the 'MAX' button.
 
 To mute the System Volume, click on the 'MUTE' button.
 
-
+*Screenshot*
 
 ![ALSA Volume Controller](https://raw.github.com/sandeepsinghmails/alsa_vol_controller/master/images/screenshot.jpg)
