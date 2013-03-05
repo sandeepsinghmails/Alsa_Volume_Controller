@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with Volume Controller. If not, see <http://www.gnu.org/licenses/>.
+ * along with Alsa Volume Controller. If not, see <http://www.gnu.org/licenses/>.
  *
  * To Compile:
  * $ gcc -o alsa_controller Vol_Controller.c `pkg-config --libs --cflags gtk+-2.0`
